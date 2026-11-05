@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+
+# Test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Secrets & local config — never commit
+.env
+.env.*
+!.env.example
+example_config.yaml.example
+
+# Local machine paths / configs
+config.yaml
+config.local.yaml
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Runtime artifacts
+*.log
+*.dump
+chroma_db/
+*.sqlite3
+tmp/

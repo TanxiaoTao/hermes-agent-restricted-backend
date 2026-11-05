@@ -1,0 +1,22 @@
+# Restricted backend — example configuration block for config.yaml
+#
+# Copy the `terminal:` block below into your Hermes config.yaml
+# (~/.hermes/config.yaml or, on Windows, %LOCALAPPDATA%\hermes\config.yaml).
+# Replace the placeholder path with a real directory.
+
+terminal:
+  backend: restricted
+
+  # REQUIRED: the only directory commands are allowed to run in.
+  # Must be an absolute path. Commands that try to cd / resolve outside this
+  # directory (including via `..` or symlinks) are rejected with exit code 126.
+  restricted_workdir: /absolute/path/to/allowed/dir
+
+  # Environment allowlist: only these variables are passed to child processes.
+  # The host's full environment is NEVER forwarded.
+  # PATH / HOME / LANG / LC_ALL / TZ are always added as a minimal usable base.
+  restricted_env_allowlist:
+    - PATH
+    - HOME
+    - LANG
+    - TZ
